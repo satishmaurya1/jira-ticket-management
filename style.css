@@ -35,25 +35,25 @@ body{
 }
 
 .red{
-    background-color: red;
+    background-color: rgb(247, 140, 140);
 }
 
 .green{
-    background: green;
+    background-color: rgb(152, 250, 152);
 }
 
 .blue{
-    background-color: blue;
+    background-color: rgb(163, 163, 255);
 }
 
 .black{
-    background-color: black;
+    background-color: rgb(70, 69, 69);
 }
 
 .action-btn-container{
     height: 3.5rem;
     width: 8rem;
-    background-color: rgb(189, 241, 198);
+    background-color: rgb(238, 236, 103);
     display: flex;
     align-items: center;
     justify-content: space-around;
@@ -83,5 +83,58 @@ body{
 
 .remove-btn:hover{
     background-color: #aacc00;
+}
+
+
+/* ----------------main--------------- */
+
+.modal-container{
+    position: absolute;
+    background-color: khaki;
+    height: 40vh;
+    width: 50vw;
+    top: calc((100vh - 40vh)/2);
+    left: calc((100vw - 50vw)/2);
+    display: none;
+}
+
+.modal-container.active{
+    display: flex;
+}
+
+.text-area-container{
+    height: 100%;
+    width: 75%;
+    border: none;
+    outline: none;
+    background-color: rgb(39, 1, 16);
+    resize: none;
+    color: white;
+    font-size: 1.9rem;
+    padding: 2rem;
+
+}
+
+.priority-color-container{
+    height: 100%;
+    width: 25%;
+    background-color: rgb(250, 218, 242);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    
+}
+
+
+
+.priority-color{
+    height: 3rem;
+    width: 55%;
+    
+}
+
+.border{
+    border: 4px solid red;
 }
 
