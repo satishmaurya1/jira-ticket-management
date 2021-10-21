@@ -60,12 +60,28 @@ body{
 }
 
 .add-btn{
-    margin-top: 22px;
+    display: flex;
+    font-size: 2rem;
+    width: 50%;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+
+.add-btn:hover{
+    background-color: #aacc00;
+}
+
+.remove-btn{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50%;
+    height: 100%;
     font-size: 2rem;
 }
-.remove-btn{
-    margin-top: 22px;
 
-    font-size: 2rem;
+.remove-btn:hover{
+    background-color: #aacc00;
 }
 
