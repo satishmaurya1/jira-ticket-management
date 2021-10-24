@@ -12,6 +12,10 @@ let prioritycolors=document.querySelectorAll(".priority-color");
 
 
 
+
+
+
+
 prioritycolors.forEach((colorelem ,index) => {
 
     colorelem.addEventListener("click",() => {
@@ -54,7 +58,8 @@ function createTicket(ticketColor,ticketTask,ticketid){
     ticketContainer.setAttribute("class","ticket-container");
     ticketContainer.innerHTML= `<div class="ticket-color ${ticketColor}"></div>
     <div class="ticket-id"> # ${ticketid}</div>
-    <div class="task-area">${ticketTask}</div>`;
+    <div class="task-area">${ticketTask}</div>
+    `;
 
     maincontainer.appendChild(ticketContainer);
 };
