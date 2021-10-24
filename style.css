@@ -148,7 +148,7 @@ body{
 
 .ticket-color{
     height: 1rem;
-    background-color: black;
+    /* background-color: black; */
 }
 
 .ticket-id{
