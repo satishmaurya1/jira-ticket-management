@@ -39,6 +39,17 @@ for(let i=0; i< toolBoxColors.length; i++){
                 createTicket(ticketobj.ticketColor, ticketobj.ticketTask, ticketobj.ticketid);
         })
     })
+
+    toolBoxColors[i].addEventListener("dblclick",()=>{
+        let allTicketContainer = document.querySelectorAll(".ticket-container");
+        for (let i = 0; i < allTicketContainer.length; i++) {
+            allTicketContainer[i].remove();
+        }
+
+        ticketArray.forEach((ticketobj, index)=>{
+            createTicket(ticketobj.ticketColor, ticketobj.ticketTask, ticketobj.ticketid);
+        })
+    })
 }
 
 
