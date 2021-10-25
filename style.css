@@ -82,7 +82,7 @@ body{
 }
 
 .remove-btn:hover{
-    background-color: #aacc00;
+    background-color: #afc91b;
 }
 
 
@@ -162,6 +162,7 @@ body{
     height: calc(100% - 1rem - 2rem - 2rem);
   
     padding: 0.5rem;
+    outline: none;
 }
 
 .main-container{
