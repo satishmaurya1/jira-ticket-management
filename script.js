@@ -86,8 +86,8 @@ modal.addEventListener("keydown",(e)=>{
    
     if(key === 'Shift'){
         createTicket(modalprioritycolor,textareacontainer.value);
-        modal.classList.remove("active");
-        textareacontainer.value= " ";
+        setModalToDefault();
+       
     }
 });
 
@@ -112,6 +112,7 @@ function createTicket(ticketColor,ticketTask,ticketid){
 
     if (!ticketid) {
         ticketArray.push({ticketColor, ticketTask, ticketid : id});
+        localStorage.setItem("jira tickets", JSON.stringify(ticketArray));
 
     }
 
@@ -121,7 +122,7 @@ function createTicket(ticketColor,ticketTask,ticketid){
 
     handleLock(ticketContainer);
 
-     handleColor(ticketContainer);
+     handleColor(ticketContainer, id);
    
 };
 
@@ -138,6 +139,8 @@ function handleLock(ticket){
   let taskarea=ticket.querySelector(".task-area");
   let  ticketlock = ticketlockElem.children[0];
   ticketlock.addEventListener("click",()=>{
+
+
       if(ticketlock.classList.contains(lockClass)){
 
         ticketlock.classList.remove(lockClass);
@@ -158,10 +161,11 @@ function handleLock(ticket){
 
 
 
-function handleColor(ticket){
+function handleColor(ticket, id){
     let ticketColor = ticket.querySelector(".ticket-color");
 
     ticketColor.addEventListener("click",()=>{
+        let ticketIndex = getTicketId(id);
 
         let currentTicketColor = ticketColor.classList[1];
         let currentTicketColorIndex = colors.findIndex((color)=>{
@@ -178,4 +182,24 @@ function handleColor(ticket){
     })
 
   
+}
+
+function getTicketId(id){
+    let ticketIndex = ticketArray.findIndex((ticketobj)=>{
+        return ticketobj.ticketid === id;
+    })
+
+    return ticketIndex;
+}
+
+
+function setModalToDefault(){
+    modal.classList.remove("active");
+    modalprioritycolor=colors[colors.length-1];
+    textareacontainer.value= " ";
+    prioritycolors.forEach((colorElem)=>{
+        colorElem.classList.remove("border");
+    })
+
+    prioritycolors[prioritycolors.length -1 ].classList.add("border");
 }
